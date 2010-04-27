@@ -1,0 +1,5 @@
+adapter: sqlserver
+host: localhost
+database: northwind
+username: local
+password: local@bigblue

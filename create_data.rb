@@ -14,3 +14,17 @@ Sham.define do
 end
 
 puts Sham.title
+
+db_config = YAML::load(File.open('database.yml'))
+ActiveRecord::Base.establish_connection db_config
+
+Category.blueprint do
+  Description  { Sham.name }
+end
+
+
+c = Category.make_unsaved
+puts c
+puts c.CategoryID
+puts c.CategoryName
+puts c.Description
